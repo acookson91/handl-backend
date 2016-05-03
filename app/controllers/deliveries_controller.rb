@@ -8,6 +8,11 @@ class DeliveriesController < ApplicationController
     Delivery.create(delivery_params)
   end
 
+  def update
+    @delivery = Delivery.find(params[:id])
+    @delivery.update(delivery_params)
+  end
+
   private
 
   def delivery_params
