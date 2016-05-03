@@ -6,10 +6,16 @@ describe DeliveriesController, 'testing deliveries' do
     Delivery.create(recipient: 'Sachin', pickup_address: 'Mayfair', dropoff_address: '230 432', status: 'pending')
   end
 
-  it 'can create a delivery', type: :request do
+  it 'displays existing delivery requests', type: :request do
     get '/'
     json = JSON.parse(response.body)
     expect(json[0]['recipient']).to eq('James')
     expect(json[1]['recipient']).to eq('Sachin')
+  end
+
+  it 'allows user to create delivery request', type: :request do
+    params = {recipient: 'Simon', pickup_address: 'Old St', dropoff_address: '230 000', status: 'pending'}
+    post '/deliveries.json', delivery: params
+    expect(Delivery.last.recipient).to eq('Simon')
   end
 end
