@@ -9,8 +9,7 @@ class DeliveriesController < ApplicationController
   end
 
   def update
-    @delivery = Delivery.find(params[:id])
-    @delivery.update(delivery_params)
+    Delivery.find(params[:id]).update(delivery_params)
   end
 
   private
