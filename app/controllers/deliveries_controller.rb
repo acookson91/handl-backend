@@ -8,6 +8,10 @@ class DeliveriesController < ApplicationController
     Delivery.create(delivery_params)
   end
 
+  def show
+    render json: Delivery.find(params[:id])
+  end
+
   def update
     Delivery.find(params[:id]).update(delivery_params)
   end
