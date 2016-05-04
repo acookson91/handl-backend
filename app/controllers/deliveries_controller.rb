@@ -15,6 +15,14 @@ class DeliveriesController < ApplicationController
   private
 
   def delivery_params
-    params.require(:delivery).permit(:recipient, :pickup_address, :dropoff_address, :status)
+    params.require(:delivery).permit(:sender_name,
+                                     :pickup_line1,
+                                     :pickup_line2,
+                                     :pickup_postcode,
+                                     :recipient_name,
+                                     :dropoff_line1,
+                                     :dropoff_line2,
+                                     :dropoff_postcode,
+                                     :status)
   end
 end
