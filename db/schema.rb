@@ -17,12 +17,17 @@ ActiveRecord::Schema.define(version: 20160503145435) do
   enable_extension "plpgsql"
 
   create_table "deliveries", force: :cascade do |t|
-    t.string   "recipient"
-    t.string   "pickup_address"
-    t.string   "dropoff_address"
+    t.string   "sender_name"
+    t.string   "pickup_line1"
+    t.string   "pickup_line2"
+    t.string   "pickup_postcode"
+    t.string   "recipient_name"
+    t.string   "dropoff_line1"
+    t.string   "dropoff_line2"
+    t.string   "dropoff_postcode"
     t.string   "status"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
 end
