@@ -14,8 +14,7 @@ Delivery.create([{
     recipient_name: 'Andrew',
     dropoff_line1: '2 Hoxton Street',
     dropoff_line2: 'London',
-    dropoff_postcode: 'E1C 8KJ',
-    status: 'pending'
+    dropoff_postcode: 'E1C 8KJ'
   },
   {
       sender_name: 'Phil',
