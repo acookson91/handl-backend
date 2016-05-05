@@ -7,7 +7,7 @@ class DeliveriesController < ApplicationController
   end
 
   def create
-    respond_with Delivery.create(delivery_params)
+    Delivery.create(delivery_params)
   end
 
   def show
@@ -15,7 +15,7 @@ class DeliveriesController < ApplicationController
   end
 
   def update
-    respond_with Delivery.find(params[:id]).update(delivery_params)
+     Delivery.find(params[:id]).update(delivery_params)
   end
 
   private

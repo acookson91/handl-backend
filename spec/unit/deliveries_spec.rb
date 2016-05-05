@@ -24,22 +24,22 @@ describe DeliveriesController, 'testing deliveries' do
   end
 
   it 'allows user to create delivery request', type: :request do
-    post '/deliveries.json', delivery: new_delivery_params
+    post '/deliveries.json', new_delivery_params
     expect(Delivery.last.recipient_name).to eq(new_delivery_params[:recipient_name])
   end
 
   it 'allows user to change status to assigned', type: :request do
-    patch "/deliveries/#{@delivery.id}.json", delivery: status_assigned
+    patch "/deliveries/#{@delivery.id}.json", status_assigned
     expect(status).to eq('assigned')
   end
 
   it 'allows user to change status to collected', type: :request do
-    patch "/deliveries/#{@delivery.id}.json", delivery: status_collected
+    patch "/deliveries/#{@delivery.id}.json", status_collected
     expect(status).to eq('collected')
   end
 
   it 'allows user to change status to delivered', type: :request do
-    patch "/deliveries/#{@delivery.id}.json", delivery: status_delivered
+    patch "/deliveries/#{@delivery.id}.json", status_delivered
     expect(status).to eq('delivered')
   end
 end
