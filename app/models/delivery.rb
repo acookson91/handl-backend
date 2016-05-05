@@ -1,5 +1,11 @@
 class Delivery < ActiveRecord::Base
 
+  after_initialize :init
+  
+  def init
+        self.status  ||= 'pending'
+  end
+
   def as_json(options={})
     super(only: [:id,
                  :sender_name,
