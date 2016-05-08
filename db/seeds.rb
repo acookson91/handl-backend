@@ -8,22 +8,22 @@
 
 Delivery.create([{
     sender_name: 'James',
-    pickup_line1: '1 Mayfair Road',
-    pickup_line2: 'London',
-    pickup_postcode: 'W1 6XY',
+    pickup_line1: '11 st peters way',
+    pickup_line2: 'hertfordshire',
+    pickup_postcode: 'WD3 5QF',
     recipient_name: 'Andrew',
-    dropoff_line1: '2 Hoxton Street',
+    dropoff_line1: '100 gosset street',
     dropoff_line2: 'London',
-    dropoff_postcode: 'E1C 8KJ'
+    dropoff_postcode: 'E2 6NT'
   },
   {
-      sender_name: 'Phil',
-      pickup_line1: '1 Shoreditch Road',
-      pickup_line2: 'London',
-      pickup_postcode: 'E17 7JY',
-      recipient_name: 'Carrie',
-      dropoff_line1: '2 Kingsland Street',
-      dropoff_line2: 'London',
-      dropoff_postcode: 'E9 1CJ',
-      status: 'pending'
-    }])
+    sender_name: 'Phil',
+    pickup_line1: '1 Browning Street',
+    pickup_line2: 'London',
+    pickup_postcode: 'SE17 1LN',
+    recipient_name: 'Carrie',
+    dropoff_line1: '50 Commercial St',
+    dropoff_line2: 'London',
+    dropoff_postcode: 'E1 6LT',
+    status: 'pending'
+}])
