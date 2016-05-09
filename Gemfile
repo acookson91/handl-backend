@@ -5,7 +5,7 @@ gem 'rails-api'
 
 gem 'spring', :group => :development
 
-gem 'responders', '2.0'
+gem 'responders', '~> 2.0'
 gem 'pg'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'omniauth'
