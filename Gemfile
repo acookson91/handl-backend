@@ -1,8 +1,6 @@
 source 'https://rubygems.org'
 
-
 gem 'rails', '4.2.6'
-
 gem 'rails-api'
 
 gem 'spring', :group => :development
@@ -10,6 +8,8 @@ gem 'spring', :group => :development
 gem 'responders', '2.0'
 gem 'pg'
 gem 'rack-cors', :require => 'rack/cors'
+gem 'omniauth'
+gem 'devise_token_auth'
 
 group :test do
   gem 'rspec-rails'
