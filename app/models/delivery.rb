@@ -4,7 +4,7 @@ class Delivery < ActiveRecord::Base
   belongs_to :user
 
   def init
-        self.status  ||= 'pending'
+    self.status  ||= 'pending'
   end
 
   def as_json(options={})

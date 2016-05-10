@@ -10,6 +10,7 @@ gem 'pg'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'omniauth'
 gem 'devise_token_auth'
+gem 'angular_rails_csrf'
 
 group :test do
   gem 'rspec-rails'

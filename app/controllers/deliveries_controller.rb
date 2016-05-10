@@ -1,13 +1,17 @@
 class DeliveriesController < ApplicationController
 
+  before_action :authenticate_user!
+
   respond_to :json
 
   def index
+    p current_user
+
     render json: Delivery.all
   end
 
   def create
-    Delivery.create(delivery_params)
+    respond_with current_user.deliveries.create(delivery_params)
   end
 
   def show
