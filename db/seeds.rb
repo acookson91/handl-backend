@@ -27,3 +27,9 @@ Delivery.create([{
     dropoff_postcode: 'E1 6LT',
     status: 'pending'
 }])
+
+User.create(
+    email: 'bob@bob.com',
+    password: 'password123',
+    password_confirmation: 'password123'
+)
