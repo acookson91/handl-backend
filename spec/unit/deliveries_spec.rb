@@ -1,11 +1,15 @@
 require 'rails_helper'
 
+describe Delivery, type: :model do
+  it { is_expected.to belong_to :user }
+end
+
 describe DeliveriesController, 'testing deliveries' do
   doubles
 
   before(:each) do
-    @delivery = create :delivery
-    @delivery2 = create :delivery, sender_name: 'Maria'
+    @user = create :user_with_delivery
+    @delivery = @user.deliveries[0]
   end
 
   it 'displays existing delivery requests', type: :request do

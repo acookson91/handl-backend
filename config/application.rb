@@ -37,7 +37,7 @@ module HandlBackend
         origins '*'
         resource '*',
           :headers => :any,
-          :expose  => ['access-token', 'expiry', 'token-type', 'uid', 'client'],
+          :expose  => ['access-token', 'expiry', 'token-type', 'uid', 'client', 'Content-Type'],
           :methods => [:get, :post, :options, :put, :patch]
       end
     end
