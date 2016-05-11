@@ -1,5 +1,8 @@
 class DeliveriesController < ApplicationController
 
+  before_action :authenticate_user!
+
+
   respond_to :json
 
   def index
@@ -7,7 +10,7 @@ class DeliveriesController < ApplicationController
   end
 
   def create
-    Delivery.create(delivery_params)
+    current_user.deliveries.create(delivery_params)
   end
 
   def show
