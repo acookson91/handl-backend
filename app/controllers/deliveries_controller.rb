@@ -1,19 +1,14 @@
 class DeliveriesController < ApplicationController
-
-  before_action :authenticate_user!
-
+  before_action :authenticate_user!, except: [:index]
 
   respond_to :json
 
   def index
-    puts "CCCCCUUUUUURRRRRENT USSSSSEr"
-    p current_user
-    puts 
     render json: Delivery.all
   end
 
   def create
-    current_user.deliveries.create(delivery_params)
+    respond_with current_user.deliveries.create(delivery_params)
   end
 
   def show
