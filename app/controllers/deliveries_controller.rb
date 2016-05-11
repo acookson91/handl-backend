@@ -16,6 +16,8 @@ class DeliveriesController < ApplicationController
   end
 
   def update
+    p delivery_params
+
      respond_with Delivery.find(params[:id]).update(delivery_params)
   end
 
