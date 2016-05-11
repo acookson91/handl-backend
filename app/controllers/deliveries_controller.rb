@@ -1,4 +1,5 @@
 class DeliveriesController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
 
   respond_to :json
 
@@ -7,7 +8,7 @@ class DeliveriesController < ApplicationController
   end
 
   def create
-    Delivery.create(delivery_params)
+    respond_with current_user.deliveries.create(delivery_params)
   end
 
   def show

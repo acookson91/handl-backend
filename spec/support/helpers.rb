@@ -5,6 +5,7 @@ def doubles
   let(:status_assigned) { {status: 'assigned'} }
   let(:status_collected) { {status: 'collected'} }
   let(:status_delivered) { {status: 'delivered'} }
+  let(:auth_error) {{"errors"=>["Authorized users only."]}}
 end
 
   ENTRIES_IN_INDIVIDUAL_HASH = 10

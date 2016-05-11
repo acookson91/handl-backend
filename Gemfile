@@ -10,6 +10,11 @@ gem 'spring', :group => :development
 gem 'responders', '2.0'
 gem 'pg'
 gem 'rack-cors', :require => 'rack/cors'
+gem 'devise'
+gem 'devise_token_auth'
+gem 'omniauth'
+gem 'shoulda'
+
 
 group :test do
   gem 'rspec-rails'

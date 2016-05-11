@@ -1,7 +1,9 @@
 class Delivery < ActiveRecord::Base
 
   after_initialize :init
-  
+
+  belongs_to :user 
+
   def init
         self.status  ||= 'pending'
   end
