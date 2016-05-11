@@ -7,4 +7,9 @@ class User < ActiveRecord::Base
 
   has_many :deliveries
 
+  before_save -> do
+    self.uid = SecureRandom.uuid
+    skip_confirmation!
+  end
+
 end

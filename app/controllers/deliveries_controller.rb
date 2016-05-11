@@ -6,6 +6,9 @@ class DeliveriesController < ApplicationController
   respond_to :json
 
   def index
+    puts "CCCCCUUUUUURRRRRENT USSSSSEr"
+    p current_user
+    puts 
     render json: Delivery.all
   end
 
