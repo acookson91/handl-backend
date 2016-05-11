@@ -5,6 +5,7 @@ class DeviseTokenAuthCreateUsers < ActiveRecord::Migration
       t.string :provider, :null => false, :default => "email"
       t.string :uid, :null => false, :default => ""
 
+
       ## Database authenticatable
       t.string :encrypted_password, :null => false, :default => ""
 
@@ -38,6 +39,7 @@ class DeviseTokenAuthCreateUsers < ActiveRecord::Migration
       t.string :nickname
       t.string :image
       t.string :email
+      t.boolean :handlr_status
 
       ## Tokens
       t.json :tokens

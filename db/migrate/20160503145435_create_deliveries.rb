@@ -11,6 +11,7 @@ class CreateDeliveries < ActiveRecord::Migration
       t.string :dropoff_postcode
       t.string :status
       t.integer :handlr_id
+      
       t.timestamps null: false
     end
 

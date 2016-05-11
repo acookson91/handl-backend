@@ -2,7 +2,7 @@ class Delivery < ActiveRecord::Base
 
   after_initialize :init
 
-  belongs_to :user 
+  belongs_to :user
 
   def init
         self.status  ||= 'pending'
@@ -18,7 +18,9 @@ class Delivery < ActiveRecord::Base
                  :dropoff_line1,
                  :dropoff_line2,
                  :dropoff_postcode,
-                 :status])
+                 :status,
+                 :handlr_id,
+                 :user_id])
   end
 
 end
