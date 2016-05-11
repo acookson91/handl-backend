@@ -1,5 +1,5 @@
 class DeliveriesController < ApplicationController
-  before_action :authenticate_user!, except: [:index]
+  before_action :authenticate_user!
 
   respond_to :json
 
@@ -16,7 +16,7 @@ class DeliveriesController < ApplicationController
   end
 
   def update
-     Delivery.find(params[:id]).update(delivery_params)
+     respond_with Delivery.find(params[:id]).update(delivery_params)
   end
 
   private

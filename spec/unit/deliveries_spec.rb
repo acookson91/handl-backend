@@ -51,6 +51,7 @@ describe DeliveriesController, 'testing deliveries' do
 
   it 'displays existing delivery requests', type: :request do
     get '/', {}, {}
+    p auth_error
     expect(json).to eq(auth_error)
   end
 end
