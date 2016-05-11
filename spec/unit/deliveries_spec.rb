@@ -8,18 +8,8 @@ describe DeliveriesController, 'testing deliveries' do
   doubles
 
   before(:each) do
-    @simon = User.create(email: "sachin@mail.com",password: "12345678", password_confirmation:"12345678")
-
-    @delivery = @simon.deliveries.create( sender_name: 'James',
-                                          pickup_line1: '1 Mayfair Road',
-                                          pickup_line2: 'London',
-                                          pickup_postcode: 'W1 6XY',
-                                          recipient_name: 'Simon',
-                                          dropoff_line1: '2 Hoxton Street',
-                                          dropoff_line2: 'London',
-                                          dropoff_postcode: 'E1C 8KJ',
-                                          status: 'pending')
-
+    @simon = create :user_with_delivery
+    @delivery = @simon.deliveries[0]
     @auth_headers = @simon.create_new_auth_token
     @delivery2 = create :delivery, sender_name: 'Maria'
   end
@@ -40,10 +30,8 @@ describe DeliveriesController, 'testing deliveries' do
   end
 
   it 'allows user to create delivery request', type: :request do
-    p Delivery.all
     post '/deliveries.json', new_delivery_params, @auth_headers
     expect(Delivery.last.recipient_name).to eq(new_delivery_params[:recipient_name])
-    p Delivery.all
   end
 
   it 'allows user to change status to assigned', type: :request do
@@ -59,5 +47,10 @@ describe DeliveriesController, 'testing deliveries' do
   it 'allows user to change status to delivered', type: :request do
     patch "/deliveries/#{@delivery.id}.json", status_delivered, @auth_headers
     expect(status).to eq('delivered')
+  end
+
+  it 'displays existing delivery requests', type: :request do
+    get '/', {}, {}
+    expect(json).to eq(auth_error)
   end
 end
