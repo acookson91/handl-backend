@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20160511091025) do
     t.string   "dropoff_line2"
     t.string   "dropoff_postcode"
     t.string   "status"
+    t.integer  "handlr_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.integer  "user_id"
@@ -53,6 +54,7 @@ ActiveRecord::Schema.define(version: 20160511091025) do
     t.string   "nickname"
     t.string   "image"
     t.string   "email"
+    t.boolean  "handlr_status"
     t.json     "tokens"
     t.datetime "created_at"
     t.datetime "updated_at"

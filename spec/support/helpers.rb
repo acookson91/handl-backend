@@ -8,4 +8,4 @@ def doubles
   let(:auth_error) {{"errors"=>["Authorized users only."]}}
 end
 
-  ENTRIES_IN_INDIVIDUAL_HASH = 10
+  ENTRIES_IN_INDIVIDUAL_HASH = 12
