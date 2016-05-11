@@ -12,6 +12,8 @@ describe UsersController, 'testing users' do
     @delivery = @simon.deliveries[0]
     @auth_headers = @simon.create_new_auth_token
     @delivery2 = create :delivery, sender_name: 'Maria'
+    @sachin = create :user, email: "sachin@sachin.com"
+    @delivery.update(handlr_id: @sachin.id)
   end
 
   it 'displays users deliveries if logged in', type: :request do
@@ -22,6 +24,11 @@ describe UsersController, 'testing users' do
   it 'does not display users deliveries if logged out', type: :request do
     get "/users/#{@simon.id}", {}, {}
     expect(json).to eq(auth_error)
+  end
+
+  it 'displays users deliveries if logged in', type: :request do
+    get "/users/#{@sachin.id}", {}, @auth_headers
+    expect(json[1]['handlr_id']).to eq(@sachin.id)
   end
 
 end

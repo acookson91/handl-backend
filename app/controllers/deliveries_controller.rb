@@ -30,6 +30,7 @@ class DeliveriesController < ApplicationController
                   :dropoff_line1,
                   :dropoff_line2,
                   :dropoff_postcode,
-                  :status)
+                  :status,
+                  :handlr_id)
   end
 end
